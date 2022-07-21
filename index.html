@@ -92,14 +92,25 @@ ul li {
 	margin: 0 auto;
 	padding: 2rem
 }
- #disqus_thread { 
+ #thread { 
     width: 50%;
     margin: 0 auto;
     padding: 1rem;
     margin-top: 2rem;
 }
+.buttons {
+    display: inline-block;
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+.buttons a{
+	padding: 1rem;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 0 0px 6px #ff9800;
+}
 @media(max-width:767.98px) {
-	 #disqus_thread { 
+	 #thread { 
     width: 98%; 
 }
 	.container {
@@ -129,49 +140,24 @@ ul li {
 	</header>
     <section>
             <div ><h2>ELIGE TU GRUPO</h2>
-                
+                <div class="buttons">
 				<a href="https://telegra.ph/global-07-20-2" target="_blank" rel="noopener noreferrer" style="
-				    background: #f91100;
-					padding: .5rem;
-					border-radius: .3rem;
-					color: #ffffff;
-					text-decoration: none;
-					font-size: 12px;
-			">GLOBAL</a>   ← | →  
-				<a href="https://telegra.ph/PREMIUM-07-12" target="_blank" rel="noopener noreferrer" style="
-background: #ff9800;
-    padding: .5rem;
-    border-radius: .3rem;
-    color: #000000;
-    text-decoration: none;
-    font-size: 12px; 
+				    background: #f91100;  
+			">GLOBAL</a>  
+				<a href="https://telegra.ph/PREMIUM-07-21" target="_blank" rel="noopener noreferrer" style="
+background: #ff9800;  
 			"><img style="
-    width: 18px;
+    width: 36px;
 " src="data:image/png;base64,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" /> PREMIUM</a>
-            </div>
+</div></div>
 
     </section>
    <section>
-	<div id="disqus_thread"></div>
-	<script>
-		/**
-		*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-		*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-		/*
-		var disqus_config = function () {
-		this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-		this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-		};
-		*/
-		(function() { // DON'T EDIT BELOW THIS LINE
-		var d = document, s = d.createElement('script');
-		s.src = 'https://negroserias.disqus.com/embed.js';
-		s.setAttribute('data-timestamp', +new Date());
-		(d.head || d.body).appendChild(s);
-		})();
-	</script>
-	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-   </section>
+	   <div id="thread">
+		<script async src="https://telegram.org/js/telegram-widget.js?19" data-telegram-post="SectaDoriloca/3" data-width="100%" data-color="CA9C0E" data-dark="1" data-dark-color="F0B138"></script>
+		<script async src="https://telegram.org/js/telegram-widget.js?19" data-telegram-discussion="SectaDoriloca/3" data-comments-limit="10" data-colorful="1" data-color="E22F38" data-dark="1" data-dark-color="F95C54"></script>
+	</div>
+</section>
 	<footer>
 		<div class="container center">
 			<ul>
@@ -197,8 +183,7 @@ function gtag() {
 }
 gtag('js', new Date());
 gtag('config', 'G-DEJC98BPXL');
-	</script>
-	<script id="dsq-count-scr" src="//negroserias.disqus.com/count.js" async></script>
+	</script> 
 </body>
 
 </html>
