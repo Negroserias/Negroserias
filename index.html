@@ -47,64 +47,7 @@
           <button type="submit">Enviar Comentario</button>
         </form>
       );
-    };<!DOCTYPE html>
-<html>
-<head>
-  <title>Formulario de Comentarios</title>
-  <script src="https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.production.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
-</head>
-<body>
-  <div id="root"></div>
-
-  <script>
-    const CommentForm = () => {
-      const handleSubmit = (e) => {
-        e.preventDefault();
-        const formData = new FormData(e.target);
-        const newComment = {
-          nickname: formData.get("nickname"),
-          ip: formData.get("ip"),
-          body: formData.get("body"),
-        };
-
-        // Realizar la solicitud POST para enviar el nuevo comentario a la API
-        fetch('https://tuproyecto.glitch.me/api/comments', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(newComment)
-        })
-        .then(response => response.json())
-        .then(savedComment => {
-          console.log('Comentario enviado:', savedComment);
-          // Aquí puedes realizar alguna acción adicional después de enviar el comentario, si es necesario
-        })
-        .catch(error => console.error('Error al enviar el comentario:', error));
-      };
-
-      return (
-        <form onSubmit={handleSubmit}>
-          <label>
-            Nickname (máximo 10 caracteres):
-            <input type="text" name="nickname" maxLength="10" required />
-          </label><br /><br /> 
-          <label>
-            Comentario (máximo 50 caracteres):
-            <textarea name="body" rows="4" maxLength="50" required></textarea>
-          </label><br /><br />
-
-          <button type="submit">Enviar Comentario</button>
-        </form>
-      );
     };
-
-    ReactDOM.render(<CommentForm />, document.getElementById('root'));
-  </script>
-</body>
-</html>
-
 
     ReactDOM.render(<CommentForm />, document.getElementById('root'));
   </script>
